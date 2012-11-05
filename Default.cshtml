@@ -1,0 +1,111 @@
+﻿@{
+    
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>My Site's Title</title>
+        <link href="@Href("~/site.css?v=1")" rel="stylesheet">
+        <link href="@Href("~/animate.css?v=1")" rel="stylesheet">
+
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    </head>
+    <body>
+        <div id="heart"></div>
+
+        <div class="action-items">
+<!--            <button class="fadeInLeft-heart">Fade In Left</button>
+            <button class="grow-heart">Grow</button>
+            <button class="border-heart">Border</button>
+            <button class="skew-heart">Skew</button>
+    -->        <button class="shake-heart">Shake</button>
+            <button class="bounce-heart">Bounce</button>
+            <button class="wobble-heart">Wobble</button>
+            <button class="wiggle-heart">Wiggle</button>
+        </div>
+
+        <script src="@Href("~/jquery-1.8.0.min.js")"></script>
+        <script>
+
+            $(".wiggle-heart").on("click", function (e) {
+
+                e.preventDefault();
+
+                $("#heart").removeClass("bounce shake wobble fadeInLeftBig wiggle")
+                                .addClass("animated wiggle");
+
+            });
+
+
+            $(".fadeInLeft-heart").on("click", function (e) {
+
+                e.preventDefault();
+
+                $("#heart").removeClass("bounce shake wobble fadeInLeftBig wiggle")
+                                .addClass("animated fadeInLeftBig");
+
+            });
+
+
+            $(".grow-heart").on("click", function (e) {
+
+                e.preventDefault();
+
+                $("#heart").addClass("animated make-bigger");
+
+            });
+
+            $(".border-heart").on("click", function (e) {
+
+                e.preventDefault();
+
+                $("#heart:before, #heart:after").addClass("heart-border");
+
+            });
+
+            $(".skew-heart").on("click", function (e) {
+
+                e.preventDefault();
+
+                $("#heart:before, #heart:after").addClass("heart-transform");
+                $("#heart:after").addClass("heart-after-transform");
+
+            });
+
+            $(".shake-heart").on("click", function (e) {
+
+                e.preventDefault();
+
+                $("#heart").removeClass("bounce shake, wobble fadeInLeftBig wiggle")
+                            .addClass("animated shake");
+
+            });
+
+            $(".bounce-heart").on("click", function (e) {
+
+                e.preventDefault();
+
+                $("#heart").removeClass("shake bounce wobble fadeInLeftBig wiggle")
+                                .addClass("animated bounce");
+
+            });
+
+            $(".wobble-heart").on("click", function (e) {
+
+                e.preventDefault();
+
+                $("#heart").removeClass("bounce shake wobble fadeInLeftBig wiggle")
+                                .addClass("animated wobble");
+
+            });
+
+        $("#heart").removeClass("bounce shake wobble fadeInLeftBig wiggle")
+                        .addClass("animated fadeInLeftBig");
+
+
+        </script>
+    </body>
+</html>
